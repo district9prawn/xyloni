@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<efx:project name="new_project" description="" last_change_date="Do Oktober 15 2020 12:33:59" location="C:/tmp/XyloniEvalBoard" sw_version="2020.1.140.5.5" last_run_state="pass" last_run_tool="efx_pgm" last_run_flow="bitstream" config_result_in_sync="true" design_ood="sync" place_ood="sync" route_ood="sync" xmlns:efx="http://www.efinixinc.com/enf_proj" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.efinixinc.com/enf_proj enf_proj.xsd">
+<efx:project name="new_project" description="" last_change="1748349559" sw_version="2025.1.110.1.5" last_run_state="pass" last_run_flow="bitstream" config_result_in_sync="true" design_ood="change" place_ood="sync" route_ood="sync" xmlns:efx="http://www.efinixinc.com/enf_proj" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.efinixinc.com/enf_proj enf_proj.xsd">
     <efx:device_info>
         <efx:family name="Trion"/>
         <efx:device name="T8F81"/>
         <efx:timing_model name="C2"/>
     </efx:device_info>
-    <efx:design_info def_veri_version="verilog_2k" def_vhdl_version="vhdl_2008">
+    <efx:design_info def_veri_version="verilog_2k" def_vhdl_version="vhdl_2008" unified_flow="false">
         <efx:top_module name="counter"/>
-        <efx:design_file name="counter.vhd" version="vhdl_2008"/>
+        <efx:design_file name="counter.vhd" version="vhdl_2008" library="default"/>
         <efx:top_vhdl_arch name=""/>
     </efx:design_info>
     <efx:constraint_info>
@@ -18,6 +18,7 @@
         <efx:sim_file name="counter_tb.vhd"/>
     </efx:sim_info>
     <efx:misc_info/>
+    <efx:ip_info/>
     <efx:synthesis tool_name="efx_map">
         <efx:param name="work_dir" value="work_syn" value_type="e_string"/>
         <efx:param name="write_efx_verilog" value="on" value_type="e_bool"/>
@@ -28,13 +29,44 @@
         <efx:param name="infer-sync-set-reset" value="1" value_type="e_option"/>
         <efx:param name="fanout-limit" value="0" value_type="e_integer"/>
         <efx:param name="seq_opt" value="0" value_type="e_option"/>
+        <efx:param name="allow-const-ram-index" value="0" value_type="e_option"/>
+        <efx:param name="blackbox-error" value="1" value_type="e_option"/>
+        <efx:param name="blast_const_operand_adders" value="1" value_type="e_option"/>
+        <efx:param name="bram_output_regs_packing" value="1" value_type="e_option"/>
+        <efx:param name="bram-push-tco-outreg" value="0" value_type="e_option"/>
+        <efx:param name="create-onehot-fsms" value="0" value_type="e_option"/>
+        <efx:param name="hdl-compile-unit" value="1" value_type="e_option"/>
+        <efx:param name="hdl-loop-limit" value="20000" value_type="e_integer"/>
+        <efx:param name="enable-mark-debug" value="1" value_type="e_option"/>
+        <efx:param name="max-bit-blast-mem-size" value="10240" value_type="e_integer"/>
+        <efx:param name="min-sr-fanout" value="0" value_type="e_integer"/>
+        <efx:param name="min-ce-fanout" value="0" value_type="e_integer"/>
+        <efx:param name="mult-auto-pipeline" value="0" value_type="e_integer"/>
+        <efx:param name="mult-decomp-retime" value="0" value_type="e_option"/>
+        <efx:param name="operator-sharing" value="0" value_type="e_option"/>
+        <efx:param name="optimize-adder-tree" value="0" value_type="e_option"/>
+        <efx:param name="optimize-zero-init-rom" value="1" value_type="e_option"/>
+        <efx:param name="peri-syn-instantiation" value="0" value_type="e_option"/>
+        <efx:param name="peri-syn-inference" value="0" value_type="e_option"/>
+        <efx:param name="ram-decomp-mode" value="0" value_type="e_option"/>
+        <efx:param name="retiming" value="1" value_type="e_option"/>
+        <efx:param name="seq-opt-sync-only" value="0" value_type="e_option"/>
+        <efx:param name="use-logic-for-small-mem" value="64" value_type="e_integer"/>
+        <efx:param name="use-logic-for-small-rom" value="64" value_type="e_integer"/>
+        <efx:param name="max_threads" value="-1" value_type="e_integer"/>
+        <efx:param name="mult_input_regs_packing" value="1" value_type="e_option"/>
+        <efx:param name="mult_output_regs_packing" value="1" value_type="e_option"/>
     </efx:synthesis>
     <efx:place_and_route tool_name="efx_pnr">
         <efx:param name="work_dir" value="work_pnr" value_type="e_string"/>
         <efx:param name="verbose" value="off" value_type="e_bool"/>
         <efx:param name="load_delaym" value="on" value_type="e_bool"/>
         <efx:param name="optimization_level" value="NULL" value_type="e_option"/>
-        <efx:param name="qp_options=anneal_random_seed=" value="1" value_type="e_integer"/>
+        <efx:param name="seed" value="1" value_type="e_integer"/>
+        <efx:param name="placer_effort_level" value="2" value_type="e_option"/>
+        <efx:param name="max_threads" value="-1" value_type="e_integer"/>
+        <efx:param name="print_critical_path" value="10" value_type="e_integer"/>
+        <efx:param name="classic_flow" value="off" value_type="e_noarg"/>
     </efx:place_and_route>
     <efx:bitstream_generation tool_name="efx_pgm">
         <efx:param name="mode" value="active" value_type="e_string"/>
@@ -46,6 +78,14 @@
         <efx:param name="io_weak_pullup" value="on" value_type="e_bool"/>
         <efx:param name="oscillator_clock_divider" value="DIV8" value_type="e_option"/>
         <efx:param name="enable_crc_check" value="on" value_type="e_bool"/>
+        <efx:param name="bitstream_compression" value="on" value_type="e_bool"/>
+        <efx:param name="active_capture_clk_edge" value="posedge" value_type="e_option"/>
+        <efx:param name="release_tri_then_reset" value="on" value_type="e_bool"/>
+        <efx:param name="generate_bit" value="on" value_type="e_bool"/>
+        <efx:param name="generate_bitbin" value="off" value_type="e_bool"/>
+        <efx:param name="generate_hex" value="on" value_type="e_bool"/>
+        <efx:param name="generate_hexbin" value="off" value_type="e_bool"/>
+        <efx:param name="jtag_usercode" value="0xFFFFFFFF"/>
     </efx:bitstream_generation>
     <efx:debugger>
         <efx:param name="work_dir" value="work_dbg" value_type="e_string"/>
