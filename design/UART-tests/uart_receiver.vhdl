@@ -15,7 +15,7 @@ use ieee.numeric_std.all;
 
 entity uart_rx is
     generic (
-        g_CLKS_PER_BIT : integer := 115 -- Need to set correct clock cycles per bit
+        g_CLKS_PER_BIT : integer := 115 -- Remember to set this in instantiation as default won't work
     );
     port (
         i_clk            : in  std_logic;
